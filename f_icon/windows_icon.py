@@ -131,7 +131,7 @@ class IconCreator:
             icon_name = self._append_date(icon_name)
 
         img = Image.open(temp_file)
-        img = img.resize((256, 256), Image.ANTIALIAS)
+        img = img.resize((256, 256), Image.LANCZOS)
         img.save(placement_path + os.sep + icon_name, sizes=[(256, 256)])
 
         self._generate_desktop_ini(folder, os.path.join(placement, icon_name))
